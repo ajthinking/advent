@@ -50,9 +50,8 @@
     function makeAdventCalender() {
         var day = daysUntilFreedom();
         if(day > 23) {
-            //return;
+            return;
         }
-        day = 10;
         
         document.body.style.backgroundImage = "url('" + image(day) + "')";
         document.getElementById("message").innerHTML = message(day);
