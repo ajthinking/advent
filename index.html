@@ -1,0 +1,37 @@
+<link href='https://fonts.googleapis.com/css?family=Exo:400,900' rel='stylesheet' type='text/css'>
+<link href='app.css' rel='stylesheet' type='text/css'>
+<div class="wrapper">
+  <div class="message">
+    <h1 id="heading">Responsive background</h1>    
+    <p id="message">With thanks to http://sixrevisions.com/css/responsive-background-image/ and 500px</p>
+  </div>
+</div>
+
+<script>
+    function differenceInDays() {
+        var date1 = new Date("2/25/2018");
+        var date2 = new Date();
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        return diffDays;        
+    }
+
+    var days = [
+        {
+            backgroundImageUrl: "https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+            heading: "Bubbla",
+            message: "det är viktigt att bubbla"
+        },
+        {
+            backgroundImageUrl: "http://ppcdn.500px.org/75319705/1991f76c0c6a91ae1d23eb94ac5c7a9f7e79c480/2048.jpg",
+            heading: "Natur",
+            message: "naturen är God"
+        },        
+    ];    
+
+
+    var page = days[differenceInDays()];
+    document.body.style.backgroundImage = "url('" + page.backgroundImageUrl + "')";
+    document.getElementById("heading").innerHTML = page.heading;
+    document.getElementById("message").innerHTML = page.message;
+</script>
